@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>my Website</title>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	}
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+	background-color: skyblue;
+	}
+#container{
+	width:550px;
+	background-color:rgba(13,11,94,.1);
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	box-shadow:0 0 3px #999;
+	}
+#container_body{
+	padding:20px;
+	}
+.form_title{
+	font-size:35px;
+	color:#141823;
+	text-align:center;
+	padding:10px;
+	font-weight:normal;
+	}
+.head_para{
+	font-size:19px;
+	color:#99a2a7;
+	text-align:center;
+	font-weight:normal;
+	}
+#form_name{
+	padding:25px 0 0 15px;
+	}
+.firstnameorlastname{
+	 margin-right:20px;
+	}
+.input_name{
+	width:434px;
+	padding:5px;
+	font-size:18px;
+	}
+ 
+select{
+	padding:5px;
+	}
+
+#check_box{
+	padding:10px 0 0 0;
+	}
+
+
+
+
+select{
+	padding:5px;
+	}
+
+#radio_button{
+	padding:10px 0 0 0;
+	}
+#email_form{
+	clear:both;
+	padding:15px 0 10px 0px;
+	}
+.input_email{
+	width:434px;
+	padding:5px;
+	font-size:18px;
+	}
+
+
+#password_form{
+	padding:10px 0 10px 0px;
+	}
+.input_password{
+	width:434px;
+	padding:5px;
+	font-size:18px;
+	}
+
+ table.left{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 4px;
+        text-align: left;
+    }
+
+#errorBox{
+	color:#F00;
+	}
+
+
+
+	</style>
+	<script>
+
+
+		function SubmitFunction() {
+		
+		var first_name = document.getElementById("first_name").value;
+		var fname=/^[a-zA-Z]+$/;
+		
+
+		var last_name = document.getElementById("last_name").value;
+		
+
+		var gender_name = document.getElementById("gender_name").value;
+		var hobbies_name = document.getElementById("hobbies_name").value;
+			var choices = [];
+			var h = document.getElementsByName('Hobbies');
+			for (var i=0;i<h.length;i++){
+			  if ( h[i].checked ) {
+			    choices.push(h[i].value);
+			  }
+			}
+		//alert(choices);
+
+		var email_id = document.getElementById("email_id").value;
+		 var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+		var password_name = document.getElementById("password_name").value;
+
+
+		if(first_name=="") {
+			alert("Please Enter Name");
+			document.form.first_name.focus();
+			return false;
+		}else if (fname.test(first_name) == false) 
+			    {
+				alert('Please enter only Charecters');
+				document.form.first_name.focus() ;
+				return (false);
+			    }
+			
+
+
+
+
+		if(last_name=="") {
+			alert("Please Enter Last Name");
+			document.form.last_name.focus();
+			return false;
+		}else if (fname.test(last_name) == false) 
+			    {
+				alert('Please enter only Charecters');
+				document.form.last_name.focus();
+				return (false);
+			    }
+
+
+
+		if(gender_name=="") {
+			alert("Please Select Gender");
+			return false;
+		}
+			
+
+		
+
+         if(document.form.Hobbies[0].checked == false && document.form.Hobbies[1].checked == false && document.form.Hobbies[2].checked == false && document.form.Hobbies[3].checked == false){
+			alert("Please Select your Hobbies");
+			return false;
+		}
+
+		
+
+		if(email_id=="") {
+			alert("Please Enter Email");
+			document.form.email_id.focus();
+			return false;
+		}else if (reg.test(email_id) == false) 
+			    {
+				alert('Invalid Email Address');
+				document.form.email_id.focus();
+				return (false);
+			    }
+
+
+		if(password_name=="") {
+			alert("Please Enter Password");
+			document.form.password_name.focus();
+			return false;
+		}
+
+
+			document.getElementById("first_name_value").innerHTML=first_name;
+			document.getElementById("last_name_value").innerHTML=last_name;
+			document.getElementById("gender_name_value").innerHTML=gender_name;
+			document.getElementById("hobbies_name_value").innerHTML=choices;
+			document.getElementById("email_id_value").innerHTML=email_id;
+			document.getElementById("password_name_value").innerHTML=password_name;
+			
+
+		
+ 	}		
+
+
+	</script>
+    </head>
+
+ 	<body>
+ 
+ 	
+	 <!--container start-->
+ 	<div id="container">
+  	<div id="container_body">
+
+    	<div>
+       	<h2 class="form_title">User Registration Form </h2>
+      	</div>
+   
+ 	<!--Form  start-->
+
+	   	<div id="form_name" >
+	      	<div class="firstnameorlastname">
+	       	<form name="form" action="Table.html" method="get">
+	       	<div id="errorBox"></div>
+		
+		<input type="text" name="Name"  placeholder="First Name"  class="input_name" required id="first_name">
+		<input type="text" name="LastName"  placeholder="Last Name" class="input_name" required id="last_name">
+
+
+	 	<div id="drop_down" >
+		<select name="Gender" id="gender_name">
+	  	<option value="male">Male</option>
+	  	<option value="female" >Female</option>
+	  	<option value="other">Other</option>
+		</select>
+		</div> 
+
+     <div id="check_box" >
+		<p>Hobbies:</p>
+		&nbsp&nbsp<input type="checkbox" name="Hobbies"  id="hobbies_name" value="Playing Cricket"> Playing Cricket<br>
+		&nbsp&nbsp<input type="checkbox" name="Hobbies"  id="hobbies_name" value="Listening Music"> Listening Music<br>
+		&nbsp&nbsp<input type="checkbox" name="Hobbies"  id="hobbies_name" value="Browsing Internet">Browsing Internet <br>
+		&nbsp&nbsp<input type="checkbox" name="Hobbies"  id="hobbies_name" value="Watching TV"> Watching TV<br>	
+	
+	       
+      </div>
+	
+
+
+
+	      <div id="email_form">
+		  <input type="text" name="Email" value=""  placeholder="Enter Email" class="input_email" id="email_id">
+	      </div>
+	      
+	      <div id="password_form">
+		  <input type="password" name="Password" value=""  placeholder="Enter Password" class="input_password" id="password_name">
+	      </div>
+      
+      
+       
+		<div>
+	    	<input type="button" value="Submit" onClick="SubmitFunction()" id="submit_button" >
+		<input type="Reset">
+		</div>
+	
+      
+	     </form>
+      </div><br/>
+
+    <!--form ends--> 
+
+<!--table Start-->
+
+	<table>
+	    <thead>
+		<tr>
+	    <th>Fname</th>
+	    <th>Lname</th>
+	    <th>Gender</th>
+	    <th>Hobbies</th>
+	    <th>Email</th>
+	    <th>Password</th>
+		</tr>
+		</thead>
+	
+		<tbody>
+		    <tr>
+			<td><div id='first_name_value'></div></td>
+			<td><div id='last_name_value'></div></td>
+			<td><div id='gender_name_value'></div></td>
+			<td><div id='hobbies_name_value'></div></td>
+			<td><div id='email_id_value'></div></td>
+			<td><div id='password_name_value'></div></td>		       
+		 </tr>
+		</tbody>
+	  </table>
+
+     
+<!--table Ends-->
+	  </div>
+	</div>
+	<!--container ends-->
+	</body>
+   </html>
