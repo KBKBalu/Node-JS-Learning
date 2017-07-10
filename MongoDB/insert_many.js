@@ -9,7 +9,7 @@ MongoClient.connect(url, function(err, db) {
   var myobj = [
     { name: 'Balu', address: 'Charikonda st 1'},
     { name: 'KBK', address: 'Kmgt'},
-    { name: 'MB', address: 'Apple st 143'},
+    { name: 'murali', address: 'Apple st 143'},
     { name: 'Hannah', address: 'Mountain 21'},
     { name: 'Shekar', address: 'Valley 345'},
     { name: 'Ismail', address: 'Ghatkesar'},
@@ -18,8 +18,8 @@ MongoClient.connect(url, function(err, db) {
     { name: 'Veda', address: 'GachiBowli'},
     { name: 'Srinu', address: 'Yellow Garden '},
     { name: 'Srikanth', address: 'Park Lane '},
-    { name: 'Lovely', address: 'Hi-Tech'},
-    { name: 'Sahithya', address: 'Uppal'}
+    { name: 'Salim', address: 'Hi-Tech'},
+    { name: 'Sourabh', address: 'Uppal'}
   ];
   db.collection("Employee").insertMany(myobj, function(err, res) {
     if (err) throw err;
