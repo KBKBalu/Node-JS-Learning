@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: red;
+}
+
+a {
+  color: green;
+}
+
+#paper.name {
+  color: pink;
+}
+
+
+/*font-family {
+	color: #00B7FF;
+}
+*/

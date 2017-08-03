@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    ul
+        - each paper, i in news
+            li
+                = paper.name
+                = paper.language
+                = paper.dayofdate
+                = paper.isbest
+                = paper._id
+                p
+                form(action='/news/#{paper._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                p 
+                    a(href='/news/#{paper._id}/edit') Edit
+                p
+                    a(href='/news/#{paper._id}') Show

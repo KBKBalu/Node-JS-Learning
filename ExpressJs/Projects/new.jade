@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddPaper(name="addpaper",method="post",action="/news")
+        p Name: 
+            input#inputName(type="text", placeholder="ex. Times of India ", name="name")
+        p Language: 
+            input#inputLanguage(type="text", placeholder="ex. English ", name="language")
+        
+        p DayofDate: 
+            input#inputDayofDate(type="date", name="dayofdate")
+        p Are You Liked?: 
+            input#inputIsBest(type="checkbox", name="isbest")
+        p
+            button#btnSubmit(type="submit") submit
